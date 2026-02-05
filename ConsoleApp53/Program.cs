@@ -151,3 +151,23 @@ namespace ConvertidorMonedas
                             Console.WriteLine("Entrada inválida.");
                         }
                         break;
+                    case "4":
+                        Console.WriteLine();
+                        peso.MostrarInfo();
+                        Console.WriteLine();
+                        dolar.MostrarInfo();
+                        break;
+
+                    case "5":
+                        continuar = false;
+                        Console.WriteLine("Gracias. Hasta luego.");
+                        break;
+
+                    default:
+                        Console.WriteLine("Opción no válida.");
+                        break;
+                }
+            }
+        }
+    }
+}
