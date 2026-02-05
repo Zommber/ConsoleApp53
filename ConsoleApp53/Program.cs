@@ -113,3 +113,16 @@ namespace ConvertidorMonedas
                 Console.Write("Opción: ");
 
                 string opcion = Console.ReadLine() ?? "";
+                switch (opcion)
+                {
+                    case "1":
+                        if (TryLeerDouble("Cantidad en pesos: ", out double cps))
+                        {
+                            if (cps < 0) Console.WriteLine("No se aceptan cantidades negativas.");
+                            else convertidor.MostrarConversion(cps);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Entrada inválida. Escribe un número como 100 o 100.50");
+                        }
+                        break;
