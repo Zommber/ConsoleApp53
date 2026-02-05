@@ -126,3 +126,28 @@ namespace ConvertidorMonedas
                             Console.WriteLine("Entrada inválida. Escribe un número como 100 o 100.50");
                         }
                         break;
+                    case "2":
+                        convertidor.IntercambiarMonedas();
+                        if (TryLeerDouble("Cantidad en dólares: ", out double cds))
+                        {
+                            if (cds < 0) Console.WriteLine("No se aceptan cantidades negativas.");
+                            else convertidor.MostrarConversion(cds);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Entrada inválida. Escribe un número válido.");
+                        }
+                        convertidor.IntercambiarMonedas();
+                        break;
+
+                    case "3":
+                        if (TryLeerDouble("Nueva tasa (pesos por 1 USD): ", out double nt))
+                        {
+                            peso.SetTasaCambio(nt);
+                            Console.WriteLine($"Tasa actualizada a {nt:F2} MXN = 1 USD");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Entrada inválida.");
+                        }
+                        break;
